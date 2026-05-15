@@ -1,0 +1,40 @@
+{
+  "name": "mini-youtube",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeveloperWide/mini-YouTube.git"
+  },
+  "keywords": [
+    "YouTube Clone",
+    "Full stack MERN Project"
+  ],
+  "author": "Mahesh Rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeveloperWide/mini-YouTube/issues"
+  },
+  "homepage": "https://github.com/DeveloperWide/mini-YouTube#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "mongoose": "^9.6.2",
+    "typemongoose": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.0"
+  }
+}
