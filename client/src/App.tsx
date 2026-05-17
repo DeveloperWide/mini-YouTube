@@ -1,6 +1,11 @@
+import { Route, Routes } from "react-router"
+import Home from "./pages/Home"
+
 const App = () => {
   return (
-    <div className="text-5xl h-screen w-full flex justify-center items-center text-red-500 font-bold">YouTube Clone</div>
+   <Routes>
+    <Route path="/" element={<Home />}/>
+   </Routes>
   )
 }
 
