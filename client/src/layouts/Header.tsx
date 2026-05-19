@@ -2,8 +2,14 @@ import { Link } from "react-router";
 import { Logo } from "../assets/index";
 import SearchInput from "../components/SearchInput";
 import UserControls from "../components/UserControls";
+import type React from "react";
 
-const Header = () => {
+export interface Props {
+  handleOpen: () => void;
+  setVideo: React.Dispatch<React.SetStateAction<File | null>>;
+}
+
+const Header = ({ handleOpen, setVideo }: Props) => {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-[#0F0F0F]/95 shadow-[0_1px_20px_rgba(0,0,0,0.25)] backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3">
@@ -16,7 +22,7 @@ const Header = () => {
           <SearchInput />
         </div>
 
-        <UserControls />
+        <UserControls handleOpen={handleOpen} setVideo={setVideo} />
       </div>
     </nav>
   );

@@ -1,13 +1,28 @@
 import { BellIcon, Plus } from "lucide-react";
 import { Profile_Img } from "../assets";
+import Button from "@mui/material/Button";
+import { btnStyle } from "../lib/styles";
+import type { Props } from "../layouts/Header";
+// import Button from "@mui/material/Button";
 
-const UserControls = () => {
+const UserControls = ({ handleOpen, setVideo }: Props) => {
   return (
     <div className="flex items-center gap-3">
-      <button className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+      <Button
+        style={btnStyle}
+        variant="contained"
+        component="label"
+        onClick={handleOpen}
+      >
         <Plus size={16} />
         Create
-      </button>
+        <input
+          hidden
+          type="file"
+          accept="video/*"
+          onChange={(e) => setVideo(e.target.files?.[0] || null)}
+        />
+      </Button>
 
       <button className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-zinc-300 transition hover:border-zinc-500 hover:text-white">
         <BellIcon size={20} />
