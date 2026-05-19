@@ -10,15 +10,12 @@ const videoSchema = new Schema(
       type: String,
       required: true,
     },
-    file: {
-      url: {
-        type: String,
-        required: true,
-      },
-      imageURL: {
-        type: String,
-        required: true,
-      },
+    videoUrl: {
+      type: String,
+      required: true,
+    },
+    thumbnail: {
+      type: String,
       required: true,
     },
   },

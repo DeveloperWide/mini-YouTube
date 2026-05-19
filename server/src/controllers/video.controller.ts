@@ -18,25 +18,26 @@ export const getVideos = async (req: Request, res: Response) => {
   }
 };
 
-export const createVideo = async (req: Request, res: Response) => {
+export const uploadVideo = async (req: Request, res: Response) => {
   try {
-    const { title, description, file }: VideoInterface = req.body;
+    console.log(req.file);
+    console.log(req.body);
+    // const { title, description, file }: VideoInterface = req.body;
 
-    if (!title || !description || !file) {
-      res.status(400).json({
-        message: "All fields are required",
-      });
-    }
+    // if (!title || !description || !file) {
+    //   res.status(400).json({
+    //     message: "All fields are required",
+    //   });
+    // }
 
-    const video = await Video.create({
-      title,
-      description,
-      file,
-    });
+    // const video = await Video.create({
+    //   title,
+    //   description,
+    //   file,
+    // });
 
     res.status(200).json({
       message: "Video Uploaded Successfully",
-      video,
     });
   } catch (err) {
     res.status(500).json({

@@ -1,15 +1,16 @@
 import { Router } from "express";
 import {
-  createVideo,
+  uploadVideo,
   deleteVideo,
   getVideos,
   updateVideo,
 } from "../controllers/video.controller";
+import { upload } from "../middlewares/upload";
 
 const router = Router({});
 
 router.get("/", getVideos);
-router.post("/", createVideo);
+router.post("/upload", upload.single("video"), uploadVideo);
 router.patch("/:id", updateVideo);
 router.delete("/:id", deleteVideo);
 
