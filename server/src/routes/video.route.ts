@@ -5,7 +5,7 @@ import {
   getVideos,
   updateVideo,
 } from "../controllers/video.controller";
-import { upload } from "../middlewares/upload";
+import { upload } from "../middlewares/upload.middleware";
 
 const router = Router({});
 

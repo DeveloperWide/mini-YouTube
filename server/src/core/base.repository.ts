@@ -1,0 +1,21 @@
+import { Model, Document } from "mongoose";
+
+export class Repository<T extends Document> {
+  constructor(private model: Model<T>) {}
+
+  async findAll(): Promise<T[]> {
+    return this.model.find();
+  }
+
+  async findById(id: string): Promise<T | null> {
+    return this.model.findById(id);
+  }
+
+  async create(data: Partial<T>): Promise<T> {
+    return this.model.create(data);
+  }
+
+  async delete(id: string): Promise<T | null> {
+    return this.model.findByIdAndDelete(id);
+  }
+}

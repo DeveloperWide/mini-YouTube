@@ -1,4 +1,11 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Document } from "mongoose";
+
+export interface IVideo extends Document {
+  title: string;
+  description: string;
+  videoUrl: string;
+  thumnail: string;
+}
 
 const videoSchema = new Schema(
   {
@@ -22,5 +29,4 @@ const videoSchema = new Schema(
   { timestamps: true },
 );
 
-const Video = model("video", videoSchema);
-export default Video;
+export const Video = model<IVideo>("Video", videoSchema);

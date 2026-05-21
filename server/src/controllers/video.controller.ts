@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Video from "../models/Video";
-import { VideoInterface } from "../types/Video";
+import { Video } from "../models/video.model";
+import { VideoInterface } from "../types/video.type";
 
 export const getVideos = async (req: Request, res: Response) => {
   try {
